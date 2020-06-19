@@ -1,16 +1,13 @@
-# Project 4: Around The U.S.
+# From Portland to Portland
+Link: https://mgoldobin.github.io/Around-The-US/
 
-### Overview
+## Intro
 
-* Figma
-* Images
 
-**Figma**
+## Design
+[Link to the project on Figma](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4%3A-Around-The-U.S.-%2F-desktop-%2B-mobile?node-id=88%3A36)  
+The site is supported on many popular displays: 1280px and more, 1024px, 768px and 320px.
+JS...
 
-* [Link to the project in Figma](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+## Future
 
-**Images**
-
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-
-Have fun with JavaScript!
