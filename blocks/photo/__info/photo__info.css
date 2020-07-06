@@ -1,0 +1,11 @@
+.photo__info {
+	margin: 0;
+	width: 246px;
+	height: 23px;
+	padding: 22px 15px 31px 21px;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	align-items: center;
+	justify-content: space-between;
+}

@@ -1,0 +1,17 @@
+@import url('./__element/photo__element.css');
+@import url('./__grid/photo__grid.css');
+@import url('./__image/photo__image.css');
+@import url('./__info/photo__info.css');
+@import url('./__like-button/photo__like-button.css');
+@import url('./__name/photo__name.css');
+
+.photo {
+	display: flex;
+	justify-content: center;
+}
+
+@media screen and (max-width: 320px) {
+	.photo {
+		margin: 0 19px;
+	}
+}

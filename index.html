@@ -4,28 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 	<link rel="stylesheet" href="./pages/index.css">
-	<script src="./script.js"></script>
-  <title>Around The US</title>
+  <title>Around The U.S.</title>
 </head>
 <body class="body">
   <div class="page">
 
     <header class="header">
-
+      <img src="./images/logo.svg" alt="Around The US" class="header__logo">
 		</header>
 		
     <main class="content">
 
-      <section class="lead">
-
+      <section class="profile">
+        <img src="./images/avatar.jpg" alt="Avatar" class="profile__avatar">
+        <div class="profile__info">
+          <div class="profile__row">
+            <h2 class="profile__name">Jacques Cousteau</h2>
+            <button class="profile__edit-button opacity"></button>
+          </div>
+          <p class="profile__about">Explorer</p>
+        </div>
+        <button class="profile__add-button opacity"></button>
+      </section>
+ 
+      <section class="photo">
+        <ul class="photo__grid">
+          <li class="photo__element">
+            <img src="./images/Yosemite-Valley.jpg" alt="Yosemite Valley" class="photo__image">
+            <div class="photo__info">
+              <h3 class="photo__name">Yosemite Valley</h3>
+              <button class="photo__like-button opacity"></button>
+            </div>
+          </li>
+          <li class="photo__element">
+            <img src="./images/Lake-Louise.jpg" alt="Lake Louise" class="photo__image">
+            <div class="photo__info">
+              <h3 class="photo__name">Lake-Louise</h3>
+              <button class="photo__like-button opacity"></button>
+            </div>
+          </li>
+          <li class="photo__element">
+            <img src="./images/Bald-Mountains.jpg" alt="Bald Mountains" class="photo__image">
+            <div class="photo__info">
+              <h3 class="photo__name">Bald-Mountains</h3>
+              <button class="photo__like-button opacity"></button>
+            </div>
+          </li>
+          <li class="photo__element">
+            <img src="./images/Latemar.jpg" alt="Latemar" class="photo__image">
+            <div class="photo__info">
+              <h3 class="photo__name">Latemar</h3>
+              <button class="photo__like-button opacity"></button>
+            </div>
+          </li>
+          <li class="photo__element">
+            <img src="./images/Vanois.jpg" alt="Vanoise National park" class="photo__image">
+            <div class="photo__info">
+              <h3 class="photo__name">Vanois National...</h3>
+              <button class="photo__like-button opacity"></button>
+            </div>
+          </li>
+          <li class="photo__element">
+            <img src="./images/Lago-di-Braies.jpg" alt="Lago di Braies" class="photo__image">
+            <div class="photo__info">
+              <h3 class="photo__name">Lago di Braies</h3>
+              <button class="photo__like-button opacity"></button>
+            </div>
+          </li>
+        </ul>
 			</section>
 			
     </main>
 
     <footer class="footer">
-
+      <p class="footer__copyright">© 2020 Around The U.S.</p>
 		</footer>
-		
+    
+    <div class="popup popup_closed">
+
+      <div class="popup__container">
+        <h3 class="popup__title">Edit profile</h3>
+        <button class="popup__close-button opacity"></button>
+        <form action="#" class="popup__form">
+          <input type="text" placeholder="Name" class="popup__input popup__input_type_name">
+          <input type="text" placeholder="About me" class="popup__input popup__input_type_about">
+          <button class="popup__save-button opacity" type="submit">Save</button>
+        </form>
+      </div>
+
+    </div>
+    
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
