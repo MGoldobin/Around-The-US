@@ -3,11 +3,13 @@
 @import url('./__image/photo__image.css');
 @import url('./__info/photo__info.css');
 @import url('./__like-button/photo__like-button.css');
+@import url('./__delete-button/photo__delete-button.css');
 @import url('./__name/photo__name.css');
 
 .photo {
 	display: flex;
 	justify-content: center;
+	position: relative;
 }
 
 @media screen and (max-width: 320px) {
