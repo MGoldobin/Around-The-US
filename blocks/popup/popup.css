@@ -1,11 +1,13 @@
 @import url('./__save-button/popup__save-button.css');
 @import url('./__close-button/popup__close-button.css');
 @import url('./__container/popup__container.css');
+@import url('./__block/popup__block.css');
 @import url('./__input/popup__input.css');
 @import url('./__title/popup__title.css');
 @import url('./_opened/popup_opened.css');
 @import url('./_closed/popup_closed.css');
 @import url('./__form/popup__form.css');
+@import url('./__image/popup__image.css');
 
 .popup {
 	color: #000;
@@ -17,4 +19,9 @@
 	left: 0;
 	align-items: center;
 	justify-content: center;
+	transition: opacity 1s ease-out;
+}
+
+.popup.active {
+	opacity: 1;
 }

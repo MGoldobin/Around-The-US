@@ -1,0 +1,13 @@
+.popup__block {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	max-width: 90vh;
+	max-width: 80vw;
+}
