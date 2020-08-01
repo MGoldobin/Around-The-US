@@ -2,8 +2,8 @@ const editProfileWindow = document.querySelector('.popup_type_edit-profile');
 const createPlaceWindow = document.querySelector('.popup_type_create-place');
 const showImageWindow = document.querySelector('.popup_type_show-image');
 
-const editButton = document.querySelector('.profile__edit-button');
-const addButton = document.querySelector('.profile__add-button');
+const editButton = document.querySelector('.profile__edit-profile-button');
+const addButton = document.querySelector('.profile__add-card-button');
 const closeEditProfileButton = editProfileWindow.querySelector('.popup__close-button');
 const closeCreatePlaceButton = createPlaceWindow.querySelector('.popup__close-button');
 const closeShowImageButton = showImageWindow.querySelector('.popup__close-button');
