@@ -8,6 +8,7 @@
 @import url('./_closed/popup_closed.css');
 @import url('./__form/popup__form.css');
 @import url('./__image/popup__image.css');
+@import url('./__error/popup__error.css');
 
 .popup {
 	color: #000;
