@@ -87,8 +87,6 @@ initialCards.forEach( (item) => {
 
 formEdit.addEventListener('submit', (e) => {
   e.preventDefault();
-  inputName.value = profileName.textContent;
-	inputAbout.value = profileAbout.textContent;
 	profileName.textContent = inputName.value;
 	profileAbout.textContent = inputAbout.value;
 	togglePopup(editProfileWindow);
@@ -102,12 +100,13 @@ formCreate.addEventListener('submit', (e) => {
     }
     photoGrid.append(createCard(dataCard));
   togglePopup(createPlaceWindow);
-  inputTitle.value = '';
-  inputLink.value = '';
+  formCreate.reset();
 })
 
 editButton.addEventListener('click', () => {
   togglePopup(editProfileWindow);
+  inputName.value = profileName.textContent;
+	inputAbout.value = profileAbout.textContent;
 })
 
 addButton.addEventListener('click', () => {
@@ -130,3 +129,18 @@ function togglePopup(popup) {
   popup.classList.toggle('popup_opened');
   popup.classList.toggle('popup_closed');
 }
+
+window.addEventListener('keydown', function (evt) {
+  if (evt.key === "Escape") {
+    const popup = document.querySelector('.popup_opened');
+    popup.classList.toggle('popup_opened');
+    popup.classList.toggle('popup_closed');
+  }
+});
+
+window.addEventListener('click', function (evt) {
+  if(evt.target.classList.contains('popup_opened')) {
+    evt.target.classList.toggle('popup_opened');
+    evt.target.classList.toggle('popup_closed');
+  }
+});
