@@ -1,5 +1,5 @@
 function showInputError(form, input, {inputErrorClass, errorClass, inputCorrectClass, ...rest}) {
-	const error = document.querySelector(`#` + input.id + `-error`);
+	const error = document.querySelector(`#${input.id}-error`);
 	error.textContent = input.validationMessage;
 	error.classList.add(errorClass);
 	input.classList.add(inputErrorClass);
@@ -7,7 +7,7 @@ function showInputError(form, input, {inputErrorClass, errorClass, inputCorrectC
 };
 
 function hideErrorMessage(form, input, {inputErrorClass, errorClass, inputCorrectClass, ...rest}) {
-	const error = document.querySelector(`#` + input.id + `-error`);
+	const error = document.querySelector(`#${input.id}-error`);
 	error.textContent = '';
 	error.classList.remove(errorClass);
 	input.classList.remove(inputErrorClass);
