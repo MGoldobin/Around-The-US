@@ -135,11 +135,11 @@ function togglePopup(popup) {
       popup.classList.add('popup_closed');
     }
   });
-}
 
-window.addEventListener('click', function (evt) {
-  if(evt.target.classList.contains('popup_opened')) {
-    evt.target.classList.toggle('popup_opened');
-    evt.target.classList.toggle('popup_closed');
-  }
-});
+  window.addEventListener('click', function (evt) {
+    if(evt.target.classList.contains('popup_opened')) {
+      evt.target.classList.remove('popup_opened');
+      evt.target.classList.add('popup_closed');
+    }
+  });
+}
