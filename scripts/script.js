@@ -128,18 +128,26 @@ closeShowImageButton.addEventListener('click', () => {
 function togglePopup(popup) {
   popup.classList.toggle('popup_opened');
   popup.classList.toggle('popup_closed');
-  
-  window.addEventListener('keydown', function (evt) {
-    if (evt.key === "Escape") {
+
+  const escClose = (evt) => {
+    if(evt.key === 'Escape'){
       popup.classList.remove('popup_opened');
       popup.classList.add('popup_closed');
     }
-  });
+  }
 
-  window.addEventListener('click', function (evt) {
-    if(evt.target.classList.contains('popup_opened')) {
-      evt.target.classList.remove('popup_opened');
-      evt.target.classList.add('popup_closed');
+  const clickClose = (evt) => {
+    if(evt.target === popup){
+      popup.classList.remove('popup_opened');
+      popup.classList.add('popup_closed');
     }
-  });
+  }
+
+  if(popup.classList.contains('popup_opened')) {
+    document.addEventListener('keydown', escClose);
+    document.addEventListener('click', clickClose);
+  } else {
+    document.removeEventListener('keydown', escClose);
+    document.removeEventListener('click', clickClose);
+  }
 }
