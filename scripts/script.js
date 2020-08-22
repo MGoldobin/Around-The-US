@@ -11,8 +11,8 @@ const closeEditProfileButton = editProfileWindow.querySelector('.popup__close-bu
 const closeCreatePlaceButton = createPlaceWindow.querySelector('.popup__close-button');
 const closeShowImageButton = showImageWindow.querySelector('.popup__close-button');
 
-const formEdit = editProfileWindow.querySelector('.popup__form');
-const formCreate = createPlaceWindow.querySelector('.popup__form');
+const formEdit = document.querySelector('.popup__form_type_edit-profile');
+const formCreate = document.querySelector('.popup__form_type_create-place');
 
 const inputName = formEdit.querySelector('.popup__input_type_name');
 const inputAbout = formEdit.querySelector('.popup__input_type_about');
@@ -69,7 +69,7 @@ addFormValidator.enableValidation();
 initialCards.forEach( (item) => {
   let card = new Card(item, '#photo');
   photoGrid.append(card.generateCard());
-})
+});
 
 formEdit.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -110,3 +110,30 @@ closeCreatePlaceButton.addEventListener('click', () => {
 closeShowImageButton.addEventListener('click', () => {
   togglePopup(showImageWindow);
 })
+
+function togglePopup(popup) {
+  popup.classList.toggle('popup_opened');
+  popup.classList.toggle('popup_closed');
+
+  const escClose = (evt) => {
+    if(evt.key === 'Escape'){
+      popup.classList.remove('popup_opened');
+      popup.classList.add('popup_closed');
+    }
+  }
+
+  const clickClose = (evt) => {
+    if(evt.target === popup){
+      popup.classList.remove('popup_opened');
+      popup.classList.add('popup_closed');
+    }
+  }
+
+  if(popup.classList.contains('popup_opened')) {
+    document.addEventListener('keydown', escClose);
+    document.addEventListener('click', clickClose);
+  } else {
+    document.removeEventListener('keydown', escClose);
+    document.removeEventListener('click', clickClose);
+  }
+}

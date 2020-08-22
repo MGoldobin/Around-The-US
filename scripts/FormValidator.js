@@ -27,9 +27,9 @@ class FormValidator {
 	
 	_checkInputVadility(inputElement) {
 		if(inputElement.validity.valid) {
-			hideErrorMessage(inputElement);
+			this._hideErrorMessage(inputElement);
 		} else {
-			showInputError(inputElement);
+			this._showInputError(inputElement);
 		}
 	}
 	
@@ -46,11 +46,11 @@ class FormValidator {
 	
 	_setEventListeners() {
 		const inputs = Array.from(this._form.querySelectorAll(this._inputSelector));
-		const button = this._form.querySelector(this._inactiveButtonClasssubmitButtonSelector);
+		const button = this._form.querySelector(this._submitButtonSelector);
 	
-		inputs.forEach((input) => {
-			input.addEventListener('input', () => {
-				this._checkInputVadility(inputs);
+		inputs.forEach((inputElement) => {
+			inputElement.addEventListener('input', () => {
+				this._checkInputVadility(inputElement);
 				this._toggleButtonState(button, inputs);
 			});
 		});
