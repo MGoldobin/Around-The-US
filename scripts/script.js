@@ -1,3 +1,6 @@
+import FormValidator from './FormValidator.js';
+import Card from './Card.js';
+
 const editProfileWindow = document.querySelector('.popup_type_edit-profile');
 const createPlaceWindow = document.querySelector('.popup_type_create-place');
 const showImageWindow = document.querySelector('.popup_type_show-image');
@@ -8,13 +11,13 @@ const closeEditProfileButton = editProfileWindow.querySelector('.popup__close-bu
 const closeCreatePlaceButton = createPlaceWindow.querySelector('.popup__close-button');
 const closeShowImageButton = showImageWindow.querySelector('.popup__close-button');
 
-const formEdit = document.querySelector('.popup__form_type_edit-profile');
-const formCreate = document.querySelector('.popup__form_type_create-place');
+const formEdit = editProfileWindow.querySelector('.popup__form');
+const formCreate = createPlaceWindow.querySelector('.popup__form');
 
-const inputName = document.querySelector('.popup__input_type_name');
-const inputAbout = document.querySelector('.popup__input_type_about');
-const inputTitle = document.querySelector('.popup__input_type_title');
-const inputLink = document.querySelector('.popup__input_type_link');
+const inputName = formEdit.querySelector('.popup__input_type_name');
+const inputAbout = formEdit.querySelector('.popup__input_type_about');
+const inputTitle = formCreate.querySelector('.popup__input_type_title');
+const inputLink = formCreate.querySelector('.popup__input_type_link');
 
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
@@ -47,42 +50,25 @@ const initialCards = [
   }
 ];
 
-function createCard(item) {
-  const cardTemplate = document.querySelector('#photo').content.querySelector('.photo__element');
-  const cardElement = cardTemplate.cloneNode(true);
-  
-  const cardImage = cardElement.querySelector('.photo__image');
-  const cardDeleteButton = cardElement.querySelector('.photo__delete-button');
-  const cardName = cardElement.querySelector('.photo__name');
-  const cardLikeButton = cardElement.querySelector('.photo__like-button');
+const settings = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__save-button",
+  inactiveButtonClass: "popup__save-button_disabled",
+	inputErrorClass: "popup__input_type_error",
+	inputCorrectClass: "popup__input_type_correct",
+  errorClass: "popup__error_visible"
+};
 
-  cardImage.src = item.link;
-  cardImage.alt = item.name;
-  cardName.textContent = item.name;
+const editFormValidator = new FormValidator(settings, formEdit);
+const addFormValidator = new FormValidator(settings, formCreate);
 
-  cardDeleteButton.addEventListener('click', () => {
-    cardDeleteButton.closest('.photo__element').remove();
-  })
-
-  cardLikeButton.addEventListener('click', () => {
-    cardLikeButton.classList.toggle('photo__like-button_clicked');
-    cardLikeButton.classList.toggle('photo__like-button_unclicked');
-  })
-
-  cardImage.addEventListener('click', () => {
-    togglePopup(showImageWindow);
-    const image = showImageWindow.querySelector('img');
-    const caption = showImageWindow.querySelector('figcaption');
-    image.src = item.link;
-    image.alt = item.name;
-    caption.textContent = item.name;
-  })
-
-  return cardElement;
-}
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
 
 initialCards.forEach( (item) => {
-  photoGrid.append(createCard(item));
+  let card = new Card(item, '#photo');
+  photoGrid.append(card.generateCard());
 })
 
 formEdit.addEventListener('submit', (e) => {
@@ -124,30 +110,3 @@ closeCreatePlaceButton.addEventListener('click', () => {
 closeShowImageButton.addEventListener('click', () => {
   togglePopup(showImageWindow);
 })
-
-function togglePopup(popup) {
-  popup.classList.toggle('popup_opened');
-  popup.classList.toggle('popup_closed');
-
-  const escClose = (evt) => {
-    if(evt.key === 'Escape'){
-      popup.classList.remove('popup_opened');
-      popup.classList.add('popup_closed');
-    }
-  }
-
-  const clickClose = (evt) => {
-    if(evt.target === popup){
-      popup.classList.remove('popup_opened');
-      popup.classList.add('popup_closed');
-    }
-  }
-
-  if(popup.classList.contains('popup_opened')) {
-    document.addEventListener('keydown', escClose);
-    document.addEventListener('click', clickClose);
-  } else {
-    document.removeEventListener('keydown', escClose);
-    document.removeEventListener('click', clickClose);
-  }
-}
