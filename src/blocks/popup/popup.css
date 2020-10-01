@@ -5,7 +5,6 @@
 @import url('./__input/popup__input.css');
 @import url('./__title/popup__title.css');
 @import url('./_opened/popup_opened.css');
-@import url('./_closed/popup_closed.css');
 @import url('./__form/popup__form.css');
 @import url('./__image/popup__image.css');
 @import url('./__error/popup__error.css');
@@ -21,8 +20,9 @@
 	align-items: center;
 	justify-content: center;
 	transition: opacity 1s ease-out;
+	display: none;
 }
 
-.popup.active {
+.popup:active {
 	opacity: 1;
 }
