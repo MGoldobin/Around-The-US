@@ -1,3 +1,4 @@
 .photo__like-button_clicked {
-	background-image: url('../../../../images/like-button_clicked.svg');
+	background-image: url('../../../../images/like-button_clicked.svg') !important;
+	/* i don't know, this is a last idea*/
 }

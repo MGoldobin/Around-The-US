@@ -1,5 +1,4 @@
 @import url('./_clicked/photo__like-button_clicked.css');
-@import url('./_unclicked/photo__like-button_unclicked.css');
 
 .photo__like-button {
 	width: 19px;
@@ -9,6 +8,7 @@
 	background-size: contain;
 	border: 0;
 	background-color: #fff;
+	background-image: url('../../../images/like-button.svg');
 }
 
 .photo__like-button:active {
