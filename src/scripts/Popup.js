@@ -5,14 +5,12 @@ class Popup{
 	}
 
 	open() {
-		this._popupElement.classList.add('popup_opened');
-		this._popupElement.classList.remove('popup_closed');
+		this._popupElement.classList.toggle('popup_opened');
 		document.addEventListener('keydown', this._handleEscClose);
 	}
 
 	close() {
-		this._popupElement.classList.add('popup_closed');
-		this._popupElement.classList.remove('popup_opened');
+		this._popupElement.classList.toggle('popup_opened');
 		document.removeEventListener('keydown', this._handleEscClose);
 	}
 

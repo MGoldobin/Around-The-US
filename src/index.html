@@ -34,7 +34,7 @@
               <button class="photo__delete-button opacity"></button>
               <div class="photo__info">
                 <h3 class="photo__name"></h3>
-                <button class="photo__like-button photo__like-button_unclicked opacity"></button>
+                <button class="photo__like-button opacity"></button>
               </div>
             </li>
           </template>
@@ -52,10 +52,10 @@
         <h3 class="popup__title">Edit profile</h3>
         <button class="popup__close-button opacity"></button>
         <form action="#" class="popup__form popup__form_type_edit-profile">
-          <input id="profile-name" type="text" placeholder="Name" class="popup__input popup__input_type_name popup__input_type_correct" minlength="2" maxlength="40" required>
-          <span id="profile-name-error" class="popup__error"></span>
-          <input id="profile-about" type="text" placeholder="About me" class="popup__input popup__input_type_about popup__input_type_correct" minlength="2" maxlength="200" required>
-          <span id="profile-about-error" class="popup__error"></span>
+          <input id="profileName" type="text" placeholder="Name" class="popup__input popup__input_type_name popup__input_type_correct" minlength="2" maxlength="40" required>
+          <span id="profileName-error" class="popup__error"></span>
+          <input id="profileAbout" type="text" placeholder="About me" class="popup__input popup__input_type_about popup__input_type_correct" minlength="2" maxlength="200" required>
+          <span id="profileAbout-error" class="popup__error"></span>
           <button class="popup__save-button opacity" type="submit">Save</button>
         </form>
       </div>
@@ -66,10 +66,10 @@
         <h3 class="popup__title">New place</h3>
         <button class="popup__close-button opacity"></button>
         <form action="#" class="popup__form popup__form_type_create-place">
-          <input id="card-title" type="text" placeholder="Title" class="popup__input popup__input_type_title popup__input_type_correct" minlength="2" maxlength="30" required>
-          <span id="card-title-error" class="popup__error"></span>
-          <input id="card-url" type="url" placeholder="Image link" class="popup__input popup__input_type_link popup__input_type_correct" required>
-          <span id="card-url-error" class="popup__error"></span>
+          <input id="cardTitle" type="text" placeholder="Title" class="popup__input popup__input_type_title popup__input_type_correct" minlength="2" maxlength="30" required>
+          <span id="cardTitle-error" class="popup__error"></span>
+          <input id="cardUrl" type="url" placeholder="Image link" class="popup__input popup__input_type_link popup__input_type_correct" required>
+          <span id="cardUrl-error" class="popup__error"></span>
           <button class="popup__save-button popup__save-button_disabled opacity" type="submit">Create</button>
         </form>
       </div>

@@ -10,7 +10,7 @@ class Section {
   }
 
   addItem(element) {
-    this._section.append(element);
+    this._section.prepend(element);
   }
 }
 
