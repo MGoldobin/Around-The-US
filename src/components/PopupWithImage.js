@@ -8,9 +8,9 @@ class PopupWithImage extends Popup {
 	}
 
 	open(data) {
-		this._imagePopup.src = data.link;
-		this._imagePopup.alt = data.link;
-		this._captionPopup.textContent = data.name;
+		this._imagePopup.src = data.link || data.cardUrl;
+		this._imagePopup.alt = data.link || data.cardTitle;
+		this._captionPopup.textContent = data.name || data.cardTitle;
 		super.open();
 	}
 }
